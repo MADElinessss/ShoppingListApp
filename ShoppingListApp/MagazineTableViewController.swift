@@ -13,6 +13,8 @@ class MagazineTableViewController: UITableViewController {
     // 으 이걸 몰라서 몇분을 고민했음 🤦🏻‍♀️
     let magazine = MagazineInfo().magazine
     
+    let dateFormatter = DateFormatter()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,26 +35,21 @@ class MagazineTableViewController: UITableViewController {
         let url = URL(string: magazine[indexPath.row].photo_image)
 
         cell.cellImage.kf.setImage(with: url)
-        cell.cellImage.layer.cornerRadius = 15
+
+        cell.title.text = magazine[indexPath.row].title
         
-        let titleForCell = magazine[indexPath.row].title
-        cell.title.text = titleForCell
-        
-        let subtitleForCell = magazine[indexPath.row].subtitle
-        cell.subtitle.text = subtitleForCell
+        cell.subtitle.text = magazine[indexPath.row].subtitle
         
         // MARK: 날짜 DateFormatter
         let dateForCell = magazine[indexPath.row].date
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyMMdd"
+        
         let convertedDate = dateFormatter.date(from: dateForCell) ?? Date.now
         
-        let myDateFormatter = DateFormatter()
-        myDateFormatter.dateFormat = "yy년 MM월 dd일"
-        myDateFormatter.locale = Locale(identifier: "ko-KR")
-        let convertString = myDateFormatter.string(from: convertedDate)
+        dateFormatter.dateFormat = "yy년 MM월 dd일"
         
-        cell.date.text = convertString
+        let convertToString = dateFormatter.string(from: convertedDate)
+        
+        cell.date.text = convertToString
         
         return cell
     }
