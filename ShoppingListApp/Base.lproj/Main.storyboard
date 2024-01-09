@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4KO-Cb-bff">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FbE-Sc-Kde">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
@@ -380,6 +380,91 @@
             </objects>
             <point key="canvasLocation" x="3185" y="4"/>
         </scene>
+        <!--City Info3 View Controller-->
+        <scene sceneID="0Kr-61-HiL">
+            <objects>
+                <viewController id="FbE-Sc-Kde" customClass="CityInfo3ViewController" customModule="ShoppingListApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="40s-Ah-uYp">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인기 도시" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVY-1W-Zc6">
+                                <rect key="frame" x="159.66666666666666" y="93" width="74" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Qgu-3a-GKz">
+                                <rect key="frame" x="138.66666666666666" y="59" width="115.66666666666666" height="26"/>
+                                <color key="pageIndicatorTintColor" red="0.56078431370000004" green="0.56078431370000004" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.56078431370000004" green="0.56078431370000004" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fp2-xi-ngb">
+                                <rect key="frame" x="0.0" y="125" width="393" height="1"/>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jxE-VK-ieM">
+                                <rect key="frame" x="0.0" y="182" width="393" height="670"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ouy-3a-ztl">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="09q-j5-3hL">
+                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2hD-H4-rDa">
+                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="moX-gD-1aQ">
+                                <rect key="frame" x="16" y="134" width="361" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="SzP-qX-XUG"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="모두"/>
+                                    <segment title="국내"/>
+                                    <segment title="해외"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="NVa-lO-YUQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="jxE-VK-ieM" secondAttribute="trailing" id="0Cj-ea-Gwe"/>
+                            <constraint firstItem="moX-gD-1aQ" firstAttribute="top" secondItem="40s-Ah-uYp" secondAttribute="top" constant="134" id="0tD-D0-Fli"/>
+                            <constraint firstItem="Qgu-3a-GKz" firstAttribute="top" secondItem="NVa-lO-YUQ" secondAttribute="top" id="2S2-bx-3PY"/>
+                            <constraint firstItem="yVY-1W-Zc6" firstAttribute="top" secondItem="Qgu-3a-GKz" secondAttribute="bottom" constant="8" id="4tm-hm-61f"/>
+                            <constraint firstItem="NVa-lO-YUQ" firstAttribute="trailing" secondItem="moX-gD-1aQ" secondAttribute="trailing" constant="16" id="7ia-IL-K7f"/>
+                            <constraint firstItem="Fp2-xi-ngb" firstAttribute="top" secondItem="yVY-1W-Zc6" secondAttribute="bottom" constant="8" id="7oy-Nl-w63"/>
+                            <constraint firstItem="moX-gD-1aQ" firstAttribute="top" secondItem="Fp2-xi-ngb" secondAttribute="bottom" constant="8" id="8Kz-OZ-LoZ"/>
+                            <constraint firstItem="Fp2-xi-ngb" firstAttribute="leading" secondItem="40s-Ah-uYp" secondAttribute="leading" id="Ekt-w1-Yjr"/>
+                            <constraint firstItem="jxE-VK-ieM" firstAttribute="top" secondItem="moX-gD-1aQ" secondAttribute="bottom" constant="18" id="FdI-8V-Ulh"/>
+                            <constraint firstItem="yVY-1W-Zc6" firstAttribute="centerX" secondItem="40s-Ah-uYp" secondAttribute="centerX" id="IOD-p5-LcW"/>
+                            <constraint firstAttribute="trailing" secondItem="Fp2-xi-ngb" secondAttribute="trailing" id="Lt1-Fw-fl4"/>
+                            <constraint firstItem="Qgu-3a-GKz" firstAttribute="centerX" secondItem="40s-Ah-uYp" secondAttribute="centerX" id="Y2Z-Ox-pvx"/>
+                            <constraint firstItem="moX-gD-1aQ" firstAttribute="leading" secondItem="NVa-lO-YUQ" secondAttribute="leading" constant="16" id="bNq-lz-UtE"/>
+                            <constraint firstAttribute="leading" secondItem="jxE-VK-ieM" secondAttribute="leading" id="fVp-79-zx0"/>
+                            <constraint firstItem="moX-gD-1aQ" firstAttribute="top" secondItem="Fp2-xi-ngb" secondAttribute="bottom" constant="8" id="k9X-Nn-FUf"/>
+                            <constraint firstItem="moX-gD-1aQ" firstAttribute="centerX" secondItem="40s-Ah-uYp" secondAttribute="centerX" id="nER-fK-5AP"/>
+                            <constraint firstItem="jxE-VK-ieM" firstAttribute="bottom" secondItem="NVa-lO-YUQ" secondAttribute="bottom" constant="34" id="tCd-Kd-ebo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="citiesCollectionView" destination="jxE-VK-ieM" id="TCI-9P-xq3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h4r-9Z-9tW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4107.6335877862593" y="3.5211267605633805"/>
+        </scene>
     </scenes>
     <resources>
         <image name="checkmark.square" catalog="system" width="128" height="114"/>
@@ -389,6 +474,9 @@
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

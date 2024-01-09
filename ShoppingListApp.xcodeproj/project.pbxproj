@@ -17,6 +17,7 @@
 		57D25EB72B4D5B9D005E7DD6 /* CityInfo2CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D25EB52B4D5B9D005E7DD6 /* CityInfo2CollectionViewCell.swift */; };
 		57D25EB82B4D5B9D005E7DD6 /* CityInfo2CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57D25EB62B4D5B9D005E7DD6 /* CityInfo2CollectionViewCell.xib */; };
 		57D25EBA2B4D5BA7005E7DD6 /* CityInfo2CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D25EB92B4D5BA7005E7DD6 /* CityInfo2CollectionViewController.swift */; };
+		57D25EBC2B4D6309005E7DD6 /* CityInfo3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D25EBB2B4D6309005E7DD6 /* CityInfo3ViewController.swift */; };
 		57EE6DFA2B4BE39C00348EF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE6DF92B4BE39C00348EF9 /* AppDelegate.swift */; };
 		57EE6DFC2B4BE39C00348EF9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE6DFB2B4BE39C00348EF9 /* SceneDelegate.swift */; };
 		57EE6DFE2B4BE39C00348EF9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE6DFD2B4BE39C00348EF9 /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 		57D25EB52B4D5B9D005E7DD6 /* CityInfo2CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityInfo2CollectionViewCell.swift; sourceTree = "<group>"; };
 		57D25EB62B4D5B9D005E7DD6 /* CityInfo2CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityInfo2CollectionViewCell.xib; sourceTree = "<group>"; };
 		57D25EB92B4D5BA7005E7DD6 /* CityInfo2CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityInfo2CollectionViewController.swift; sourceTree = "<group>"; };
+		57D25EBB2B4D6309005E7DD6 /* CityInfo3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityInfo3ViewController.swift; sourceTree = "<group>"; };
 		57EE6DF62B4BE39C00348EF9 /* ShoppingListApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingListApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57EE6DF92B4BE39C00348EF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57EE6DFB2B4BE39C00348EF9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				57D25EB92B4D5BA7005E7DD6 /* CityInfo2CollectionViewController.swift */,
 				57D25EB52B4D5B9D005E7DD6 /* CityInfo2CollectionViewCell.swift */,
 				57D25EB62B4D5B9D005E7DD6 /* CityInfo2CollectionViewCell.xib */,
+				57D25EBB2B4D6309005E7DD6 /* CityInfo3ViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				57EE6DFE2B4BE39C00348EF9 /* ViewController.swift in Sources */,
 				57D25EBA2B4D5BA7005E7DD6 /* CityInfo2CollectionViewController.swift in Sources */,
 				57D25EB22B4D32E8005E7DD6 /* CityInfo1CollectionViewController.swift in Sources */,
+				57D25EBC2B4D6309005E7DD6 /* CityInfo3ViewController.swift in Sources */,
 				57EE6DFA2B4BE39C00348EF9 /* AppDelegate.swift in Sources */,
 				57BA00272B4C025600501B83 /* MagazineTableViewCell.swift in Sources */,
 				57EE6DFC2B4BE39C00348EF9 /* SceneDelegate.swift in Sources */,

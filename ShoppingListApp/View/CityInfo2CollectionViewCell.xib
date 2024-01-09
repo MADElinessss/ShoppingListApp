@@ -10,10 +10,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CityInfo2CollectionViewCell" customModule="ShoppingListApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="109" height="137"/>
+            <rect key="frame" x="0.0" y="0.0" width="109" height="145"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="109" height="137"/>
+                <rect key="frame" x="0.0" y="0.0" width="109" height="145"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zBm-eN-Emr">
@@ -23,14 +23,14 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I5F-GK-sMa">
-                        <rect key="frame" x="6" y="126" width="97" height="12"/>
+                        <rect key="frame" x="6" y="128.66666666666666" width="97" height="12"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
                         <color key="textColor" red="0.56078431370000004" green="0.56078431370000004" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vuo-7L-aOm">
-                        <rect key="frame" x="8" y="105" width="93" height="17"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                        <rect key="frame" x="8" y="109" width="93" height="15.666666666666671"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -45,16 +45,16 @@
                 <constraint firstItem="zBm-eN-Emr" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="Ue4-SX-Uhg"/>
                 <constraint firstAttribute="trailing" secondItem="I5F-GK-sMa" secondAttribute="trailing" constant="6" id="YSa-pW-B8E"/>
                 <constraint firstItem="vuo-7L-aOm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="bON-kf-lXB"/>
-                <constraint firstItem="vuo-7L-aOm" firstAttribute="top" secondItem="zBm-eN-Emr" secondAttribute="bottom" constant="4" id="ep0-M2-gao"/>
+                <constraint firstItem="vuo-7L-aOm" firstAttribute="top" secondItem="zBm-eN-Emr" secondAttribute="bottom" constant="8" id="ep0-M2-gao"/>
                 <constraint firstItem="zBm-eN-Emr" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="jCU-Vo-p6B"/>
             </constraints>
-            <size key="customSize" width="107" height="139"/>
+            <size key="customSize" width="107" height="147"/>
             <connections>
                 <outlet property="imageView" destination="zBm-eN-Emr" id="SCC-JM-ir7"/>
                 <outlet property="subtitleLabel" destination="I5F-GK-sMa" id="v8G-7R-cP5"/>
                 <outlet property="titleLabel" destination="vuo-7L-aOm" id="lCB-56-qRB"/>
             </connections>
-            <point key="canvasLocation" x="63.358778625954194" y="39.7887323943662"/>
+            <point key="canvasLocation" x="63.358778625954194" y="42.605633802816904"/>
         </collectionViewCell>
     </objects>
 </document>
