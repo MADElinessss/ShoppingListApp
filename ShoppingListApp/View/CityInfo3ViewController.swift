@@ -39,21 +39,7 @@ class CityInfo3ViewController: UIViewController {
     }
     
     @IBAction func segmentValueChanged(_ sender: UISegmentedControl) {
-        if sender.selectedSegmentIndex == 1 {
-            cities = CityInfo().city.filter({
-                $0.domestic_travel
-            })
-            // filter한거를 -> cities에 넣어
-            citiesCollectionView.reloadData()
-        } else if sender.selectedSegmentIndex == 2 {
-            cities = CityInfo().city.filter({
-                !$0.domestic_travel
-            })
-            citiesCollectionView.reloadData()
-        } else {
-            cities = CityInfo().city
-            citiesCollectionView.reloadData()
-        }
+        fileterCities(segmentIndex: sender.selectedSegmentIndex)
     }
 }
 
@@ -73,5 +59,20 @@ extension CityInfo3ViewController: UICollectionViewDelegate, UICollectionViewDat
         cell.subtitleLabel.text = cities[indexPath.item].city_explain
         
         return cell
+    }
+}
+
+// MARK: 도시 선택하는 로직
+extension CityInfo3ViewController {
+    func fileterCities(segmentIndex index: Int) {
+        switch index {
+        case 1:
+            cities = CityInfo().city.filter { $0.domestic_travel }
+        case 2:
+            cities = CityInfo().city.filter { !$0.domestic_travel }
+        default:
+            cities = CityInfo().city
+        }
+        citiesCollectionView.reloadData()
     }
 }
