@@ -10,10 +10,10 @@ import UIKit
 
 class CityInfo3ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    let cities = CityInfo().city
+    var cities = CityInfo().city
     
     @IBOutlet var citiesCollectionView: UICollectionView!
-    
+    @IBOutlet var categorySegment: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +38,25 @@ class CityInfo3ViewController: UIViewController, UICollectionViewDelegate, UICol
         citiesCollectionView.collectionViewLayout = layout
     }
     
+    @IBAction func segmentValueChanged(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 1 {
+            cities = CityInfo().city.filter({
+                $0.domestic_travel
+            })
+            // filter한거를 -> cities
+            citiesCollectionView.reloadData()
+        } else if sender.selectedSegmentIndex == 2 {
+            cities = CityInfo().city.filter({
+                !$0.domestic_travel
+            })
+            citiesCollectionView.reloadData()
+        } else {
+            cities = CityInfo().city
+            citiesCollectionView.reloadData()
+        }
+    }
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return cities.count
     }
@@ -53,5 +72,7 @@ class CityInfo3ViewController: UIViewController, UICollectionViewDelegate, UICol
         
         return cell
     }
+    
+    
     
 }

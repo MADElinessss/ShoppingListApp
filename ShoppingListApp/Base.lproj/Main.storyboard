@@ -433,6 +433,9 @@
                                     <segment title="국내"/>
                                     <segment title="해외"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentValueChanged:" destination="FbE-Sc-Kde" eventType="valueChanged" id="ti5-Os-upT"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NVa-lO-YUQ"/>
@@ -458,6 +461,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="categorySegment" destination="moX-gD-1aQ" id="MHe-dZ-ffa"/>
                         <outlet property="citiesCollectionView" destination="jxE-VK-ieM" id="TCI-9P-xq3"/>
                     </connections>
                 </viewController>
