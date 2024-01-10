@@ -31,7 +31,7 @@ class ShoppingListTableViewController: UITableViewController {
         
     }
     
-    // TableView 필수 메서드
+    // MARK: TableView 필수 메서드
     // 1. 셀 개수
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return shoppingList.count
@@ -59,7 +59,6 @@ class ShoppingListTableViewController: UITableViewController {
         
         cell.starButton.addTarget(self, action: #selector(starButtonTapped), for: .touchUpInside)
         cell.starButton.tag = indexPath.row
-        
         
         return cell
     }
@@ -101,5 +100,4 @@ class ShoppingListTableViewController: UITableViewController {
         backgroundView.layer.cornerRadius = 10
         addButton.layer.cornerRadius = 10
     }
-
 }

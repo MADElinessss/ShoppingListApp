@@ -15,7 +15,5 @@ class CityInfo2CollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
-
 }

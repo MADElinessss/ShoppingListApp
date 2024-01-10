@@ -8,7 +8,7 @@
 import Kingfisher
 import UIKit
 
-class CityInfo3ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class CityInfo3ViewController: UIViewController {
     
     var cities = CityInfo().city
     
@@ -43,7 +43,7 @@ class CityInfo3ViewController: UIViewController, UICollectionViewDelegate, UICol
             cities = CityInfo().city.filter({
                 $0.domestic_travel
             })
-            // filter한거를 -> cities
+            // filter한거를 -> cities에 넣어
             citiesCollectionView.reloadData()
         } else if sender.selectedSegmentIndex == 2 {
             cities = CityInfo().city.filter({
@@ -55,8 +55,10 @@ class CityInfo3ViewController: UIViewController, UICollectionViewDelegate, UICol
             citiesCollectionView.reloadData()
         }
     }
-    
-    
+}
+
+// MARK: CollectionView관련 Extension 분리
+extension CityInfo3ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return cities.count
     }
@@ -72,7 +74,4 @@ class CityInfo3ViewController: UIViewController, UICollectionViewDelegate, UICol
         
         return cell
     }
-    
-    
-    
 }

@@ -28,7 +28,6 @@ class CityInfo1CollectionViewController: UICollectionViewController {
         layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing*3, bottom: spacing, right: spacing*3)
         
         collectionView.collectionViewLayout = layout
-
     }
     
     // 1. 셀 개수
@@ -48,8 +47,6 @@ class CityInfo1CollectionViewController: UICollectionViewController {
         cell.titleLabel.text = "\(cities[indexPath.item].city_name) | \(cities[indexPath.item].city_english_name)"
         cell.subtitleLabel.text = cities[indexPath.item].city_explain
         
-        
         return cell
     }
-
 }
