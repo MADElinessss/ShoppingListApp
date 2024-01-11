@@ -5,6 +5,7 @@
 //  Created by 신정연 on 1/11/24.
 //
 
+import Kingfisher
 import UIKit
 
 class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -28,13 +29,30 @@ extension DetailViewController {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if !travelDetail[indexPath.row].ad! {
-            //  광고
+            // 관광지
             let cell = tableView.dequeueReusableCell(withIdentifier: CityDetailTableViewCell.identifier, for: indexPath) as! CityDetailTableViewCell
+            cell.titleLabel?.text = travelDetail[indexPath.row].title
+            cell.descriptionLabel.text = travelDetail[indexPath.row].description
+            cell.likeBadgeImage.image = UIImage(systemName: travelDetail[indexPath.row].like ?? false ? "heart.fill" : "heart")
+            cell.saveAndReviewLabel.text = "(\(travelDetail[indexPath.row].grade!)) · 저장 \(travelDetail[indexPath.row].save!)"
+            let url = URL(string: travelDetail[indexPath.row].travel_image ?? "")
+            cell.cityImageView.kf.setImage(with: url)
+            
             return cell
         } else {
-            // 관광지
+            // 광고
             let cell = tableView.dequeueReusableCell(withIdentifier: ADTableViewCell.identifier, for: indexPath) as! ADTableViewCell
+            cell.badgeLabel.layer.cornerRadius = 10
+            cell.adTitleLabel.text = travelDetail[indexPath.row].title
             return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if travelDetail[indexPath.row].ad! {
+            return 70
+        } else {
+            return 150
         }
     }
 }
@@ -57,6 +75,8 @@ extension DetailViewController {
         let image = UIImage(systemName: "chevron.left")
         let button = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(leftBarButtonTapped))
         navigationItem.leftBarButtonItem = button
+        navigationItem.leftBarButtonItem?.tintColor = .black
+        navigationItem.leftBarButtonItem?.title = "인기 도시"// 안됨ㅠㅠ
     }
     
     @objc func leftBarButtonTapped() {

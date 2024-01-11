@@ -12,11 +12,13 @@ class ADTableViewCell: UITableViewCell {
     static let identifier = "ADTableViewCell"
     
     @IBOutlet var badgeLabel: UILabel!
+    @IBOutlet var adTitleLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        badgeLabel.layer.cornerRadius = 20
+        layer.cornerRadius = 10
+        badgeLabel.layer.cornerRadius = 50
         backgroundColor = .orange
     }
 }
