@@ -34,7 +34,8 @@ extension DetailViewController {
             cell.titleLabel?.text = travelDetail[indexPath.row].title
             cell.descriptionLabel.text = travelDetail[indexPath.row].description
             cell.likeBadgeImage.image = UIImage(systemName: travelDetail[indexPath.row].like ?? false ? "heart.fill" : "heart")
-            cell.saveAndReviewLabel.text = "(\(travelDetail[indexPath.row].grade!)) · 저장 \(travelDetail[indexPath.row].save!)"
+            let saveNum = travelDetail[indexPath.row].save!.formatted()
+            cell.saveAndReviewLabel.text = "(\(travelDetail[indexPath.row].grade!)) · 저장 \(saveNum)"
             let url = URL(string: travelDetail[indexPath.row].travel_image ?? "")
             cell.cityImageView.kf.setImage(with: url)
             
@@ -42,8 +43,15 @@ extension DetailViewController {
         } else {
             // 광고
             let cell = tableView.dequeueReusableCell(withIdentifier: ADTableViewCell.identifier, for: indexPath) as! ADTableViewCell
-            cell.badgeLabel.layer.cornerRadius = 10
+            cell.badgeLabel.clipsToBounds = true
+            cell.badgeLabel.layer.cornerRadius = 6
             cell.adTitleLabel.text = travelDetail[indexPath.row].title
+            cell.backgroundColor = UIColor(
+                red: CGFloat.random(in: 0...1),
+                green: CGFloat.random(in: 0...1),
+                blue: CGFloat.random(in: 0...1),
+                alpha: 1
+            )
             return cell
         }
     }
@@ -53,6 +61,17 @@ extension DetailViewController {
             return 70
         } else {
             return 150
+        }
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if travelDetail[indexPath.row].ad! {
+            let viewController = storyboard?.instantiateViewController(withIdentifier: "ADViewController") as! ADViewController
+            let navigationController = UINavigationController(rootViewController: viewController)
+            navigationController.modalPresentationStyle = .fullScreen
+            present(navigationController, animated: true)
+        } else {
+            let viewController = storyboard?.instantiateViewController(withIdentifier: "TravelViewController") as! TravelViewController
+            navigationController?.pushViewController(viewController, animated: true)
         }
     }
 }

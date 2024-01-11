@@ -42,7 +42,7 @@
         <!--Travel View Controller-->
         <scene sceneID="NKy-K2-mLu">
             <objects>
-                <viewController id="B1L-yG-9V1" customClass="TravelViewController" customModule="ShoppingListApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TravelViewController" id="B1L-yG-9V1" customClass="TravelViewController" customModule="ShoppingListApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yqV-d9-zaQ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -69,25 +69,52 @@
         <!--View Controller-->
         <scene sceneID="Hap-Ht-ojh">
             <objects>
-                <viewController id="IX6-Dg-O79" customClass="ADViewController" customModule="ShoppingListApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ADViewController" id="IX6-Dg-O79" customClass="ADViewController" customModule="ShoppingListApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NLP-uv-Kzn">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ECu-bC-geQ">
+                                <rect key="frame" x="0.0" y="102" width="393" height="716"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="광고 화면임" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="51Z-Bh-Fx3">
-                                <rect key="frame" x="157.66666666666666" y="415.66666666666669" width="78" height="21"/>
+                                <rect key="frame" x="157.66666666666666" y="59" width="78" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pYz-gs-dac">
+                                <rect key="frame" x="16" y="59" width="62" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Back"/>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="IX6-Dg-O79" eventType="touchUpInside" id="Tos-k9-G6W"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="N8w-EW-FAV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="51Z-Bh-Fx3" firstAttribute="centerX" secondItem="NLP-uv-Kzn" secondAttribute="centerX" id="3F0-3r-ae5"/>
-                            <constraint firstItem="51Z-Bh-Fx3" firstAttribute="centerY" secondItem="NLP-uv-Kzn" secondAttribute="centerY" id="ApT-1y-pHF"/>
+                            <constraint firstItem="pYz-gs-dac" firstAttribute="leading" secondItem="N8w-EW-FAV" secondAttribute="leading" constant="16" id="CnY-nq-RnB"/>
+                            <constraint firstItem="ECu-bC-geQ" firstAttribute="top" secondItem="pYz-gs-dac" secondAttribute="bottom" constant="8" id="Q0A-fk-LzN"/>
+                            <constraint firstItem="N8w-EW-FAV" firstAttribute="trailing" secondItem="ECu-bC-geQ" secondAttribute="trailing" id="Qja-Ay-2Bx"/>
+                            <constraint firstItem="ECu-bC-geQ" firstAttribute="leading" secondItem="N8w-EW-FAV" secondAttribute="leading" id="U9H-uD-F4r"/>
+                            <constraint firstItem="51Z-Bh-Fx3" firstAttribute="centerX" secondItem="NLP-uv-Kzn" secondAttribute="centerX" id="Uva-ys-zyx"/>
+                            <constraint firstItem="ECu-bC-geQ" firstAttribute="top" secondItem="51Z-Bh-Fx3" secondAttribute="bottom" constant="16" id="hdU-vI-39n"/>
+                            <constraint firstItem="51Z-Bh-Fx3" firstAttribute="top" secondItem="N8w-EW-FAV" secondAttribute="top" id="hfX-WM-gCk"/>
+                            <constraint firstItem="pYz-gs-dac" firstAttribute="top" secondItem="N8w-EW-FAV" secondAttribute="top" id="ib5-zd-UGc"/>
+                            <constraint firstItem="N8w-EW-FAV" firstAttribute="bottom" secondItem="ECu-bC-geQ" secondAttribute="bottom" id="uFA-ML-Isx"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backButton" destination="pYz-gs-dac" id="3Sd-2G-OAY"/>
+                        <outlet property="webView" destination="ECu-bC-geQ" id="gtd-jZ-8HU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hw8-hO-0uf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
