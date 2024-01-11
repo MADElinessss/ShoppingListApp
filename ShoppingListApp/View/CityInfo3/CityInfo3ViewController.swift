@@ -60,6 +60,13 @@ extension CityInfo3ViewController: UICollectionViewDelegate, UICollectionViewDat
         
         return cell
     }
+    
+    // MARK: 아이템 선택 시
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "TravelDetail", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        navigationController?.pushViewController(viewController, animated: true)
+    }
 }
 
 // MARK: 도시 선택하는 로직
