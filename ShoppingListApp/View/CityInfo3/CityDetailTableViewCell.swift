@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Cosmos
 
 class CityDetailTableViewCell: UITableViewCell {
     
@@ -17,6 +18,7 @@ class CityDetailTableViewCell: UITableViewCell {
     @IBOutlet var cityImageView: UIImageView!
     @IBOutlet var likeBadgeImage: UIImageView!
     @IBOutlet var saveAndReviewLabel: UILabel!
+    @IBOutlet var ratingView: CosmosView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

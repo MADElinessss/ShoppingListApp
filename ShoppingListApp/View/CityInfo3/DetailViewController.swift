@@ -5,6 +5,7 @@
 //  Created by 신정연 on 1/11/24.
 //
 
+import Cosmos
 import Kingfisher
 import UIKit
 
@@ -13,6 +14,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     let travelDetail = TravelInfo().travel
     
     @IBOutlet var detailTableView: UITableView!
+    
     
     override func viewDidLoad() {
        super.viewDidLoad()
@@ -29,7 +31,7 @@ extension DetailViewController {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if !travelDetail[indexPath.row].ad! {
-            // 관광지
+            // MARK: 관광지 cell
             let cell = tableView.dequeueReusableCell(withIdentifier: CityDetailTableViewCell.identifier, for: indexPath) as! CityDetailTableViewCell
             cell.titleLabel?.text = travelDetail[indexPath.row].title
             cell.descriptionLabel.text = travelDetail[indexPath.row].description
@@ -39,9 +41,15 @@ extension DetailViewController {
             let url = URL(string: travelDetail[indexPath.row].travel_image ?? "")
             cell.cityImageView.kf.setImage(with: url)
             
+            // 🥲 왜 반올림해...? Double이잖아..
+            let rating : Double = travelDetail[indexPath.row].grade ?? 0
+            print(rating)
+            cell.ratingView.rating = rating
+            
             return cell
+            
         } else {
-            // 광고
+            // MARK: 광고 cell
             let cell = tableView.dequeueReusableCell(withIdentifier: ADTableViewCell.identifier, for: indexPath) as! ADTableViewCell
             cell.badgeLabel.clipsToBounds = true
             cell.badgeLabel.layer.cornerRadius = 6
@@ -52,6 +60,7 @@ extension DetailViewController {
                 blue: CGFloat.random(in: 0...1),
                 alpha: 1
             )
+            
             return cell
         }
     }
