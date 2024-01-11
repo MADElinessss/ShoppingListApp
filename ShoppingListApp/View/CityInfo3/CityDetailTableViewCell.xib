@@ -25,18 +25,12 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="철도 박물관" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="714-94-oBs">
-                        <rect key="frame" x="16" y="15.999999999999998" width="73.333333333333329" height="19.333333333333329"/>
+                        <rect key="frame" x="16" y="16" width="73.333333333333329" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="pQJ-Ai-Nj5"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                         <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일본 철도의 역사를 어쩌고 저쪼고 박물관" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a6g-90-9JP">
-                        <rect key="frame" x="16" y="35.333333333333336" width="193" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="21" id="Ylp-VG-1zn"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
-                        <color key="textColor" systemColor="systemGrayColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="icd-nm-LNh">
@@ -44,16 +38,22 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="(3) ` 저장 100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ihr-H2-Cv0">
-                        <rect key="frame" x="91.333333333333314" y="56" width="69.666666666666686" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" ambiguous="YES" text="(3) ` 저장 100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ihr-H2-Cv0">
+                        <rect key="frame" x="144.33333333333337" y="70.333333333333329" width="69.666666666666657" height="15"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="JWZ-VD-2t2"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
                         <color key="textColor" systemColor="systemGray2Color"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rvo-83-7j4" customClass="CosmosView" customModule="Cosmos">
-                        <rect key="frame" x="16" y="58.333333333333336" width="73.333333333333329" height="18.666666666666664"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rvo-83-7j4" customClass="CosmosView" customModule="Cosmos">
+                        <rect key="frame" x="16" y="68.333333333333329" width="124.33333333333331" height="18"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="qiv-A2-V1u"/>
+                        </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
                                 <color key="value" red="1" green="0.85676497220000003" blue="0.057614840569999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -63,24 +63,32 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일본 철도의 역사를 어쩌고 저쪼고 박물관" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a6g-90-9JP">
+                        <rect key="frame" x="16" y="36" width="196" height="31.333333333333329"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="hAy-nM-4rU"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                        <color key="textColor" systemColor="systemGrayColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="714-94-oBs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="1ny-Fl-ojV"/>
                     <constraint firstItem="wKv-hn-m05" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="9" id="20Y-dp-FOx"/>
                     <constraint firstAttribute="trailing" secondItem="wKv-hn-m05" secondAttribute="trailing" constant="4" id="6Cx-yQ-VVg"/>
-                    <constraint firstItem="714-94-oBs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="BaW-fQ-7fX"/>
-                    <constraint firstItem="Rvo-83-7j4" firstAttribute="top" secondItem="a6g-90-9JP" secondAttribute="bottom" constant="2" id="CoY-ar-I6k"/>
-                    <constraint firstAttribute="bottom" secondItem="Ihr-H2-Cv0" secondAttribute="bottom" constant="61" id="E35-6M-U5a"/>
-                    <constraint firstItem="a6g-90-9JP" firstAttribute="top" secondItem="714-94-oBs" secondAttribute="bottom" id="HE9-ej-6s3"/>
-                    <constraint firstAttribute="bottom" secondItem="Rvo-83-7j4" secondAttribute="bottom" constant="61" id="LfL-Cv-1X9"/>
-                    <constraint firstItem="714-94-oBs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="NHx-ZQ-sBr"/>
+                    <constraint firstItem="a6g-90-9JP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="BzF-AW-MCg"/>
+                    <constraint firstItem="a6g-90-9JP" firstAttribute="top" secondItem="714-94-oBs" secondAttribute="bottom" id="LJa-tN-Dun"/>
                     <constraint firstItem="icd-nm-LNh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="RMe-o7-n5E"/>
-                    <constraint firstItem="Ihr-H2-Cv0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="56" id="WcI-gT-xRA"/>
-                    <constraint firstItem="Rvo-83-7j4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Xwi-P1-Ivp"/>
                     <constraint firstAttribute="bottom" secondItem="wKv-hn-m05" secondAttribute="bottom" constant="9" id="aPb-5S-eHj"/>
-                    <constraint firstItem="wKv-hn-m05" firstAttribute="leading" secondItem="Ihr-H2-Cv0" secondAttribute="trailing" constant="55" id="fiF-MD-pyX"/>
+                    <constraint firstItem="Rvo-83-7j4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="bHx-oe-8O1"/>
                     <constraint firstItem="wKv-hn-m05" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="jZc-d7-EzS"/>
-                    <constraint firstItem="Ihr-H2-Cv0" firstAttribute="leading" secondItem="Rvo-83-7j4" secondAttribute="trailing" constant="2" id="jet-t9-Ovf"/>
-                    <constraint firstItem="a6g-90-9JP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="sy4-Oh-Gf6"/>
+                    <constraint firstItem="wKv-hn-m05" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ihr-H2-Cv0" secondAttribute="trailing" constant="2" id="jfh-7X-DTU"/>
+                    <constraint firstItem="714-94-oBs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="nVh-oe-7Lr"/>
+                    <constraint firstItem="wKv-hn-m05" firstAttribute="leading" secondItem="a6g-90-9JP" secondAttribute="trailing" constant="4" id="pTm-es-ZeS"/>
+                    <constraint firstItem="Ihr-H2-Cv0" firstAttribute="leading" secondItem="Rvo-83-7j4" secondAttribute="trailing" constant="4" id="sNi-6B-Qv5"/>
+                    <constraint firstItem="Ihr-H2-Cv0" firstAttribute="top" secondItem="a6g-90-9JP" secondAttribute="bottom" constant="3" id="tge-kZ-Xss"/>
+                    <constraint firstItem="Rvo-83-7j4" firstAttribute="top" secondItem="a6g-90-9JP" secondAttribute="bottom" constant="1" id="yDr-t2-8mV"/>
                     <constraint firstAttribute="trailing" secondItem="icd-nm-LNh" secondAttribute="trailing" constant="4" id="ybS-5d-xuF"/>
                 </constraints>
             </tableViewCellContentView>
@@ -93,14 +101,11 @@
                 <outlet property="saveAndReviewLabel" destination="Ihr-H2-Cv0" id="lAo-eR-vyq"/>
                 <outlet property="titleLabel" destination="714-94-oBs" id="EZc-CR-gb9"/>
             </connections>
-            <point key="canvasLocation" x="10.687022900763358" y="52.816901408450704"/>
+            <point key="canvasLocation" x="10.687022900763358" y="69.718309859154928"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="heart" catalog="system" width="128" height="107"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
