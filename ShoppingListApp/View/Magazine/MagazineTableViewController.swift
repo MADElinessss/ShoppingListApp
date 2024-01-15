@@ -7,17 +7,20 @@
 
 import Kingfisher
 import UIKit
+import WebKit
 
 class MagazineTableViewController: UITableViewController {
 
-    let magazine = MagazineInfo().magazine
+    let magazine = MagazineInfo.magazine
     let dateFormatter = DateFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.separatorStyle = .none
     }
-    
+}
+
+extension MagazineTableViewController {
     // MARK: TableView 필수 메서드
     // 1. 셀 개수
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -27,9 +30,9 @@ class MagazineTableViewController: UITableViewController {
     // 2. 셀 디자인, 데이터
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "magazineCell") as! MagazineTableViewCell
-         
+        
         let url = URL(string: magazine[indexPath.row].photo_image)
-
+        
         cell.cellImage.kf.setImage(with: url)
         cell.title.text = magazine[indexPath.row].title
         cell.subtitle.text = magazine[indexPath.row].subtitle
@@ -46,5 +49,14 @@ class MagazineTableViewController: UITableViewController {
     // 3. 셀 높이
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 440
+    }
+    
+    // MARK: 웹 뷰
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let viewController = storyboard?.instantiateViewController(withIdentifier: WebViewController.identifier) as! WebViewController
+        viewController.data = indexPath.row
+        navigationController?.pushViewController(viewController, animated: true)
+
     }
 }

@@ -6,24 +6,26 @@
 //
 
 import UIKit
+import WebKit
 
 class WebViewController: UIViewController {
 
+    @IBOutlet var webView: WKWebView!
+    
+    var list: [Magazine] = MagazineInfo.magazine
+    var data: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        configureWebView(index: data)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func configureWebView(index: Int) {
+        let urlString = list[index].link
+        
+        if let url = URL(string: urlString) {
+            let request = URLRequest(url: url)
+            webView.load(request)
+        }
     }
-    */
-
 }

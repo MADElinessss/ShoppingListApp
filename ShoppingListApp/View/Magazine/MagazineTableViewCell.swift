@@ -15,11 +15,14 @@ class MagazineTableViewCell: UITableViewCell {
     @IBOutlet var subtitle: UILabel!
     @IBOutlet var date: UILabel!
     
-    let magazine = MagazineInfo().magazine
+    let magazine = MagazineInfo.magazine
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         cellImage.layer.cornerRadius = 15
     }
+    
+    
 }

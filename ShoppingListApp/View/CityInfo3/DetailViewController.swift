@@ -20,7 +20,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
        super.viewDidLoad()
         
         configureTableView()
-        setNavigationBarItem()
+        
     }
 }
 
@@ -30,6 +30,7 @@ extension DetailViewController {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         if !travelDetail[indexPath.row].ad! {
             // MARK: 관광지 cell
             let cell = tableView.dequeueReusableCell(withIdentifier: CityDetailTableViewCell.identifier, for: indexPath) as! CityDetailTableViewCell
@@ -46,6 +47,8 @@ extension DetailViewController {
             print(rating)
             cell.ratingView.rating = rating
             
+            cell.selectionStyle = .none
+            
             return cell
             
         } else {
@@ -60,6 +63,8 @@ extension DetailViewController {
                 blue: CGFloat.random(in: 0...1),
                 alpha: 1
             )
+            
+            cell.selectionStyle = .none
             
             return cell
         }
@@ -97,17 +102,5 @@ extension DetailViewController {
         
         let xib2 = UINib(nibName: ADTableViewCell.identifier, bundle: nil)
         detailTableView.register(xib2, forCellReuseIdentifier: ADTableViewCell.identifier)
-    }
-    
-    func setNavigationBarItem() {
-        let image = UIImage(systemName: "chevron.left")
-        let button = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(leftBarButtonTapped))
-        navigationItem.leftBarButtonItem = button
-        navigationItem.leftBarButtonItem?.tintColor = .black
-        navigationItem.leftBarButtonItem?.title = "인기 도시"// 안됨ㅠㅠ
-    }
-    
-    @objc func leftBarButtonTapped() {
-        navigationController?.popViewController(animated: true)
     }
 }
