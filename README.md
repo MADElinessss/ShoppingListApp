@@ -77,3 +77,25 @@
 </td>
 </tr>
 </table>
+
+## ✅ SeSAC 15일차 Assignment
+
+- [x]  10회차 과제 업데이트
+    - [x]  셀 선택 → push 화면 전환
+    - [x]  데이터 내에 link로 값 전달해서 웹뷰
+
+<table>
+<tr>
+<td>
+    
+![Simulator Screenshot - iPhone 15 Pro - 2024-01-15 at 17 41 31](https://github.com/MADElinessss/ShoppingListApp/assets/88757043/117803fc-5e78-4aef-8c46-d3279b114ae0)
+
+</td>
+<td>
+
+![Simulator Screenshot - iPhone 15 Pro - 2024-01-15 at 17 41 36](https://github.com/MADElinessss/ShoppingListApp/assets/88757043/c2ba9191-b4d6-4cb5-80a7-8e2c1d6ff775)
+
+
+</td>
+</tr>
+</table>
