@@ -44,3 +44,36 @@
 </td>
 </tr>
 </table>
+
+## ✅ SeSAC 13일차 Assignment
+
+- [x]  인기 도시 화면의 컬렉션뷰셀을 선택하면 → 도시 상세 정보 화면이 Push로 전환
+- [x]  도시 상세 정보 화면
+    - [x]  UIViewController 기반으로 TableView 구성
+    - [x]  2개의 XIB셀 활용
+    - [x]  TravelInfo의 “ad”에 따라 셀 구분해서 사용
+    - [x]  광고셀은 타이틀 정보 있는거 쓰고, 배경 컬러는 랜덤
+    - [x]  관광지셀은 title, description, travel_image, grade, save, like 활용
+        - [x]  벌점 UI + grade 값
+        - [x]  save 값을 2,345 형채로 쉼표 표현
+- [x]  도시 상세정보 → 관광지 화면 Push
+    - [x]  버튼 눌러서 뒤로가기
+- [x]  도시 상세정보 → 광고셀 → 광고 화면 NavigationController Fullscreen Present
+    - [x]  버튼 눌러서 뒤로가기
+
+<table>
+<tr>
+<td>
+    
+![Simulator Screenshot - iPhone 15 Pro - 2024-01-12 at 09 08 55](https://github.com/MADElinessss/ShoppingListApp/assets/88757043/e9178c2e-5bd8-4466-94d4-f3f4ecd0e582)
+
+
+</td>
+<td>
+
+![Simulator Screenshot - iPhone 15 Pro - 2024-01-12 at 09 09 01](https://github.com/MADElinessss/ShoppingListApp/assets/88757043/229389db-02b1-462d-aa3d-98af2b05569e)
+
+
+</td>
+</tr>
+</table>
