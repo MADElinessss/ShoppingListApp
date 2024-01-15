@@ -14,6 +14,7 @@ class CityInfo3ViewController: UIViewController {
     
     @IBOutlet var citiesCollectionView: UICollectionView!
     @IBOutlet var categorySegment: UISegmentedControl!
+    @IBOutlet var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()

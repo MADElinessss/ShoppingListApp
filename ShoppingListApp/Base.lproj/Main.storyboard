@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1wN-Di-QK3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7me-li-WOa">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
@@ -424,7 +424,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jxE-VK-ieM">
-                                <rect key="frame" x="0.0" y="167" width="393" height="685"/>
+                                <rect key="frame" x="0.0" y="194" width="393" height="658"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ouy-3a-ztl">
                                     <size key="itemSize" width="128" height="128"/>
@@ -444,7 +444,7 @@
                                 </cells>
                             </collectionView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="moX-gD-1aQ">
-                                <rect key="frame" x="16" y="119" width="361" height="31"/>
+                                <rect key="frame" x="16" y="156" width="361" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="SzP-qX-XUG"/>
                                 </constraints>
@@ -457,27 +457,27 @@
                                     <action selector="segmentValueChanged:" destination="FbE-Sc-Kde" eventType="valueChanged" id="ti5-Os-upT"/>
                                 </connections>
                             </segmentedControl>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fp2-xi-ngb">
-                                <rect key="frame" x="0.0" y="103" width="393" height="1"/>
-                                <color key="backgroundColor" systemColor="systemGray4Color"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="C2k-x3-iDI"/>
-                                </constraints>
-                            </view>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="bgq-mH-9rr">
+                                <rect key="frame" x="0.0" y="100" width="393" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="FbE-Sc-Kde" id="yPh-jH-npB"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NVa-lO-YUQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="jxE-VK-ieM" secondAttribute="trailing" id="0Cj-ea-Gwe"/>
                             <constraint firstItem="NVa-lO-YUQ" firstAttribute="trailing" secondItem="moX-gD-1aQ" secondAttribute="trailing" constant="16" id="7ia-IL-K7f"/>
-                            <constraint firstItem="jxE-VK-ieM" firstAttribute="top" secondItem="moX-gD-1aQ" secondAttribute="bottom" constant="18" id="FdI-8V-Ulh"/>
-                            <constraint firstAttribute="trailing" secondItem="Fp2-xi-ngb" secondAttribute="trailing" id="TOs-Vr-gvD"/>
+                            <constraint firstItem="jxE-VK-ieM" firstAttribute="top" secondItem="moX-gD-1aQ" secondAttribute="bottom" constant="8" id="FdI-8V-Ulh"/>
+                            <constraint firstItem="moX-gD-1aQ" firstAttribute="top" secondItem="bgq-mH-9rr" secondAttribute="bottom" id="RSG-WR-qBB"/>
+                            <constraint firstItem="bgq-mH-9rr" firstAttribute="leading" secondItem="NVa-lO-YUQ" secondAttribute="leading" id="X2L-R3-rut"/>
                             <constraint firstItem="moX-gD-1aQ" firstAttribute="leading" secondItem="NVa-lO-YUQ" secondAttribute="leading" constant="16" id="bNq-lz-UtE"/>
-                            <constraint firstItem="moX-gD-1aQ" firstAttribute="top" secondItem="Fp2-xi-ngb" secondAttribute="bottom" constant="15" id="dr7-Kv-04j"/>
                             <constraint firstAttribute="leading" secondItem="jxE-VK-ieM" secondAttribute="leading" id="fVp-79-zx0"/>
-                            <constraint firstItem="Fp2-xi-ngb" firstAttribute="top" secondItem="NVa-lO-YUQ" secondAttribute="top" id="krz-gs-EeY"/>
+                            <constraint firstItem="bgq-mH-9rr" firstAttribute="trailing" secondItem="NVa-lO-YUQ" secondAttribute="trailing" id="hQh-Fj-5lp"/>
                             <constraint firstItem="moX-gD-1aQ" firstAttribute="centerX" secondItem="40s-Ah-uYp" secondAttribute="centerX" id="nER-fK-5AP"/>
-                            <constraint firstItem="Fp2-xi-ngb" firstAttribute="leading" secondItem="40s-Ah-uYp" secondAttribute="leading" id="rlX-Mt-uhQ"/>
+                            <constraint firstItem="bgq-mH-9rr" firstAttribute="top" secondItem="40s-Ah-uYp" secondAttribute="top" constant="100" id="nYT-8e-xAM"/>
                             <constraint firstItem="jxE-VK-ieM" firstAttribute="bottom" secondItem="NVa-lO-YUQ" secondAttribute="bottom" constant="34" id="tCd-Kd-ebo"/>
                         </constraints>
                     </view>
@@ -485,6 +485,7 @@
                     <connections>
                         <outlet property="categorySegment" destination="moX-gD-1aQ" id="MHe-dZ-ffa"/>
                         <outlet property="citiesCollectionView" destination="jxE-VK-ieM" id="TCI-9P-xq3"/>
+                        <outlet property="searchBar" destination="bgq-mH-9rr" id="XoG-RP-ggt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h4r-9Z-9tW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -536,9 +537,6 @@
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGray4Color">
-            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
