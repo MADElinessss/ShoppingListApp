@@ -9,8 +9,15 @@ import Kingfisher
 import UIKit
 
 class CityInfo3ViewController: UIViewController {
+
+    // MARK: 관찰자 달기
+    var cities: [City] = CityInfo.city {
+        didSet {
+            citiesCollectionView.reloadData()
+        }
+    }
     
-    var cities = CityInfo().city
+    var originalList = CityInfo.city
     
     @IBOutlet var citiesCollectionView: UICollectionView!
     @IBOutlet var categorySegment: UISegmentedControl!
@@ -18,6 +25,8 @@ class CityInfo3ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configureSearchBar()
 
         let xib = UINib(nibName: "CityInfo2CollectionViewCell", bundle: nil)
         citiesCollectionView.register(xib, forCellWithReuseIdentifier: "CityInfo2CollectionViewCell")
@@ -41,6 +50,47 @@ class CityInfo3ViewController: UIViewController {
     
     @IBAction func segmentValueChanged(_ sender: UISegmentedControl) {
         fileterCities(segmentIndex: sender.selectedSegmentIndex)
+    }
+}
+
+// MARK: 검색 기능 추가
+extension CityInfo3ViewController: UISearchBarDelegate {
+    
+    func configureSearchBar() {
+        searchBar.delegate = self
+        searchBar.showsCancelButton = true
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        var filterData: [City] = []
+        for item in originalList {
+            if item.city_english_name.contains(searchBar.text!) || item.city_name.contains(searchBar.text!) || item.city_explain.contains(searchBar.text!) {
+                filterData.append(item)
+                
+            }
+        }
+        cities = filterData
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        var filterData: [City] = []
+        if searchBar.text == "" {
+            cities = originalList
+        } else {
+            for item in originalList {
+                if item.city_english_name.contains(searchBar.text!) || item.city_name.contains(searchBar.text!) || item.city_explain.contains(searchBar.text!) {
+                    filterData.append(item)
+                    
+                }
+            }
+            cities = filterData
+        }
+        view.endEditing(true)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        view.endEditing(true)
     }
 }
 
@@ -75,11 +125,11 @@ extension CityInfo3ViewController {
     func fileterCities(segmentIndex index: Int) {
         switch index {
         case 1:
-            cities = CityInfo().city.filter { $0.domestic_travel }
+            cities = CityInfo.city.filter { $0.domestic_travel }
         case 2:
-            cities = CityInfo().city.filter { !$0.domestic_travel }
+            cities = CityInfo.city.filter { !$0.domestic_travel }
         default:
-            cities = CityInfo().city
+            cities = CityInfo.city
         }
         citiesCollectionView.reloadData()
     }

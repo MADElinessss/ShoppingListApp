@@ -11,7 +11,7 @@ import UIKit
 // MARK: CollectionViewController 활용
 class CityInfo1CollectionViewController: UICollectionViewController {
 
-    let cities = CityInfo().city
+    let cities = CityInfo.city
     
     override func viewDidLoad() {
         super.viewDidLoad()
