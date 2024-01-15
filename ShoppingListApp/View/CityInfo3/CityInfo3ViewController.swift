@@ -64,8 +64,10 @@ extension CityInfo3ViewController: UISearchBarDelegate {
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+
         var filterData: [City] = []
-        var text = searchBar.text?.lowercased() ?? ""
+        var trimmedText = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
+        var text = trimmedText.lowercased()
         
         let filteredList: [City]
         switch categorySegment.selectedSegmentIndex {
@@ -77,7 +79,7 @@ extension CityInfo3ViewController: UISearchBarDelegate {
             filteredList = originalList
         }
         
-        if searchBar.text == "" {
+        if text == "" {
             cities = filteredList
         } else {
             for item in filteredList {
@@ -91,7 +93,7 @@ extension CityInfo3ViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         var filterData: [City] = []
-        var text = searchBar.text?.lowercased() ?? ""
+        let text = searchBar.text?.lowercased() ?? ""
         
         let filteredList: [City]
         switch categorySegment.selectedSegmentIndex {
@@ -103,7 +105,7 @@ extension CityInfo3ViewController: UISearchBarDelegate {
             filteredList = originalList
         }
         
-        if searchBar.text == "" {
+        if text == "" {
             cities = filteredList
         } else {
             for item in filteredList {
