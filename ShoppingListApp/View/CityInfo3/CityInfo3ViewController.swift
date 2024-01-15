@@ -18,6 +18,8 @@ class CityInfo3ViewController: UIViewController {
     }
     
     var originalList = CityInfo.city
+    var domesticList = CityInfo.city.filter { $0.domestic_travel }
+    var internationalList = CityInfo.city.filter { !$0.domestic_travel }
     
     @IBOutlet var citiesCollectionView: UICollectionView!
     @IBOutlet var categorySegment: UISegmentedControl!
@@ -49,7 +51,7 @@ class CityInfo3ViewController: UIViewController {
     }
     
     @IBAction func segmentValueChanged(_ sender: UISegmentedControl) {
-        fileterCities(segmentIndex: sender.selectedSegmentIndex)
+        filterCities(segmentIndex: sender.selectedSegmentIndex)
     }
 }
 
@@ -63,24 +65,50 @@ extension CityInfo3ViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         var filterData: [City] = []
-        for item in originalList {
-            if item.city_english_name.contains(searchBar.text!) || item.city_name.contains(searchBar.text!) || item.city_explain.contains(searchBar.text!) {
-                filterData.append(item)
-                
-            }
+        var text = searchBar.text?.lowercased() ?? ""
+        
+        let filteredList: [City]
+        switch categorySegment.selectedSegmentIndex {
+        case 1:
+            filteredList = domesticList
+        case 2:
+            filteredList = internationalList
+        default:
+            filteredList = originalList
         }
-        cities = filterData
+        
+        if searchBar.text == "" {
+            cities = filteredList
+        } else {
+            for item in filteredList {
+                if item.city_english_name.lowercased().contains(text) || item.city_name.lowercased().contains(text) || item.city_explain.lowercased().contains(text) {
+                    filterData.append(item)
+                }
+            }
+            cities = filterData
+        }
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         var filterData: [City] = []
+        var text = searchBar.text?.lowercased() ?? ""
+        
+        let filteredList: [City]
+        switch categorySegment.selectedSegmentIndex {
+        case 1:
+            filteredList = domesticList
+        case 2:
+            filteredList = internationalList
+        default:
+            filteredList = originalList
+        }
+        
         if searchBar.text == "" {
-            cities = originalList
+            cities = filteredList
         } else {
-            for item in originalList {
-                if item.city_english_name.contains(searchBar.text!) || item.city_name.contains(searchBar.text!) || item.city_explain.contains(searchBar.text!) {
+            for item in filteredList {
+                if item.city_english_name.lowercased().contains(text) || item.city_name.lowercased().contains(text) || item.city_explain.lowercased().contains(text) {
                     filterData.append(item)
-                    
                 }
             }
             cities = filterData
@@ -90,6 +118,8 @@ extension CityInfo3ViewController: UISearchBarDelegate {
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = ""
+        cities = originalList
+        categorySegment.selectedSegmentIndex = 0
         view.endEditing(true)
     }
 }
@@ -122,7 +152,7 @@ extension CityInfo3ViewController: UICollectionViewDelegate, UICollectionViewDat
 
 // MARK: 도시 선택하는 로직
 extension CityInfo3ViewController {
-    func fileterCities(segmentIndex index: Int) {
+    func filterCities(segmentIndex index: Int) {
         switch index {
         case 1:
             cities = CityInfo.city.filter { $0.domestic_travel }
