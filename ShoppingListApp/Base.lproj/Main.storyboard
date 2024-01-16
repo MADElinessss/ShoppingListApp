@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7me-li-WOa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7me-li-WOa">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -492,6 +493,36 @@
             </objects>
             <point key="canvasLocation" x="2106" y="725"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="fUB-ha-oEe">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" id="Ilf-bT-2pr" customClass="MapViewController" customModule="ShoppingListApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HZn-KH-EFY">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jpm-wQ-yQl">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="unn-pE-5PB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jpm-wQ-yQl" firstAttribute="top" secondItem="unn-pE-5PB" secondAttribute="top" id="8GC-yR-AeM"/>
+                            <constraint firstItem="unn-pE-5PB" firstAttribute="bottom" secondItem="jpm-wQ-yQl" secondAttribute="bottom" id="En7-j7-78T"/>
+                            <constraint firstItem="unn-pE-5PB" firstAttribute="trailing" secondItem="jpm-wQ-yQl" secondAttribute="trailing" id="k9m-dZ-bWI"/>
+                            <constraint firstItem="jpm-wQ-yQl" firstAttribute="leading" secondItem="unn-pE-5PB" secondAttribute="leading" id="ygA-ds-xNI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="jpm-wQ-yQl" id="tDh-bd-sqA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YFW-20-kbt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2830" y="725"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="BTo-du-nJu">
             <objects>
@@ -530,7 +561,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="checkmark.square" catalog="system" width="128" height="114"/>
+        <image name="checkmark.square" catalog="system" width="32" height="32"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

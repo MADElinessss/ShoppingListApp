@@ -38,6 +38,7 @@
 		57EE6E062B4BE39D00348EF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57EE6E042B4BE39D00348EF9 /* LaunchScreen.storyboard */; };
 		57EE6E0E2B4BE3BD00348EF9 /* ShoppingListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE6E0D2B4BE3BD00348EF9 /* ShoppingListTableViewController.swift */; };
 		57EE6E102B4BE6C300348EF9 /* ShoppingListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE6E0F2B4BE6C300348EF9 /* ShoppingListTableViewCell.swift */; };
+		C148B79B2B55FDD700795223 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C148B79A2B55FDD700795223 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		57EE6E072B4BE39D00348EF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57EE6E0D2B4BE3BD00348EF9 /* ShoppingListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListTableViewController.swift; sourceTree = "<group>"; };
 		57EE6E0F2B4BE6C300348EF9 /* ShoppingListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListTableViewCell.swift; sourceTree = "<group>"; };
+		C148B79A2B55FDD700795223 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 				579DE4C22B4FDA3600E52CC3 /* ADViewController.swift */,
 				579DE4C42B4FDA6100E52CC3 /* TravelViewController.swift */,
 				579DE4C62B4FEE7D00E52CC3 /* TravelDetail.storyboard */,
+				C148B79A2B55FDD700795223 /* MapViewController.swift */,
 			);
 			path = CityInfo3;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				57D25EB22B4D32E8005E7DD6 /* CityInfo1CollectionViewController.swift in Sources */,
 				57D25EBC2B4D6309005E7DD6 /* CityInfo3ViewController.swift in Sources */,
 				579DE4BC2B4FD35000E52CC3 /* ADTableViewCell.swift in Sources */,
+				C148B79B2B55FDD700795223 /* MapViewController.swift in Sources */,
 				57EE6DFA2B4BE39C00348EF9 /* AppDelegate.swift in Sources */,
 				57BA00272B4C025600501B83 /* MagazineTableViewCell.swift in Sources */,
 				579DE4B82B4FD26200E52CC3 /* CityDetailTableViewCell.swift in Sources */,

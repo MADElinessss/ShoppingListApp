@@ -15,7 +15,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet var detailTableView: UITableView!
     
-    
     override func viewDidLoad() {
        super.viewDidLoad()
         
@@ -77,6 +76,7 @@ extension DetailViewController {
             return 150
         }
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if travelDetail[indexPath.row].ad! {
             let viewController = storyboard?.instantiateViewController(withIdentifier: "ADViewController") as! ADViewController
@@ -84,7 +84,8 @@ extension DetailViewController {
             navigationController.modalPresentationStyle = .fullScreen
             present(navigationController, animated: true)
         } else {
-            let viewController = storyboard?.instantiateViewController(withIdentifier: "TravelViewController") as! TravelViewController
+            let viewController = storyboard?.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
+            
             navigationController?.pushViewController(viewController, animated: true)
         }
     }
