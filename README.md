@@ -83,6 +83,12 @@
 - [x]  10회차 과제 업데이트
     - [x]  셀 선택 → push 화면 전환
     - [x]  데이터 내에 link로 값 전달해서 웹뷰
+     
+- [x]  세그먼트 컨트롤 상단에 서치바 추가해서 실시간 검색 기능 구현
+- [x]  국내, 해외 검색도 구현
+- [x]  city_name, city_english_name, city_explain에서 하나라도 검색 키워드 포함되어 있으면 결과로 보여주기
+- [x]  대소문자 구분 없이 검색
+- [x]  서치바 공백 입력시 whitespace 처리
 
 <table>
 <tr>
@@ -94,6 +100,11 @@
 <td>
 
 ![Simulator Screenshot - iPhone 15 Pro - 2024-01-15 at 17 41 36](https://github.com/MADElinessss/ShoppingListApp/assets/88757043/c2ba9191-b4d6-4cb5-80a7-8e2c1d6ff775)
+
+</td>
+<td>
+    
+![Simulator Screenshot - iPhone 14 Plus - 2024-01-16 at 09 34 57](https://github.com/MADElinessss/ShoppingListApp/assets/88757043/838487fa-efbb-4628-98c1-a9e63c2d6b64)
 
 
 </td>
